@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<!-- saved from url=(0097)http://clients.driven-by-data.net/okfn/bubbletree/demos/random/#/~/random-names-%2Drandom-amounts -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Data Visualization</title>
+	<script type="text/javascript" src="./Source/Minimal BubbleTree/jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="./Source/Minimal BubbleTree/jquery.history.js"></script>
+	<script type="text/javascript" src="./Source/Minimal BubbleTree/raphael.js"></script>
+	<script type="text/javascript" src="./Source/Minimal BubbleTree/vis4.js"></script>
+	<script type="text/javascript" src="./Source/Minimal BubbleTree/Tween.js"></script>
+	<script type="text/javascript" src="./Source/Minimal BubbleTree/bubbletree.js"></script>
+	<link rel="stylesheet" type="text/css" href="./Source/Minimal BubbleTree/bubbletree.css">
+	<script type="text/javascript" src="./Source/Minimal BubbleTree/cofog.js"></script>
+	
+	
+<script type="text/javascript" src="./Source/Bubble Chart/amcharts.js"></script>
+<script type="text/javascript" src="./Source/Bubble Chart/xy.js"></script>
+<script type="text/javascript" src="./Source/Bubble Chart/none.js"></script>
+<script type="text/javascript" src="./Source/Bubble Chart/light.js"></script>
+<script type="text/javascript" src="./Source/Bubble Chart/dark.js"></script>
+<script type="text/javascript" src="./Source/Bubble Chart/black.js"></script>
+<script type="text/javascript" src="./Source/Bubble Chart/chalk.js"></script>
+<script type="text/javascript" src="./Source/Bubble Chart/patterns.js"></script>
+
+<script type="text/javascript" src="./Source/Interacting between different chart types/amcharts.js"></script>
+<script type="text/javascript"  src="./Source/Interacting between different chart types/serial.js"></script>
+<script type="text/javascript"  src="./Source/Interacting between different chart types/pie.js"></script>
+<script type="text/javascript"  src="./Source/Interacting between different chart types/light.js"></script>
+
+<link rel="stylesheet" type="text/css" href="./Source/Interacting between different chart types/main.css">
+
+<header>
+<p><h1 class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Top 5 : Export Value of Major Agricultural Products,2013-2015</h1>
+	
+<style>
+.number{
+color:#000;
+}
+
+.disabled {
+    color: #999;
+}
+
+button{
+float:left;
+
+}
+input.buttonStyle {
+color: #008080;
+padding: 3px 7px;
+background: #008080;
+border: 1px solid #008080;
+}
+input.buttonStyle2 {
+color: #C71585;
+padding: 3px 7px;
+background: #C71585;
+border: 1px solid #C71585;
+}
+input.buttonStyle3 {
+color: #483D8B;
+padding: 3px 7px;
+background: #483D8B;
+border: 1px solid #483D8B;
+}
+
+
+.bubblechart-wrapper {
+
+	width: 60%; 
+	height:500px;
+	top:60px;
+	right:50px;
+	position: absolute; 
+
+}
+.litlechart{
+ width: 450px;
+ height:298px;
+ top:80px;
+ position:absolute; 
+ right:0; 
+}
+
+
+#chartdiv1,
+#chartdiv2
+{
+  width: 400px;
+  height: 200px;
+  font-size: 11px;
+  left:15px;
+  top:50px;
+  position:absolute;
+}
+#chartdiv3 {
+  width: 400px;
+  height: 300px;
+  font-size: 11px;
+   position:absolute;
+   bottom:-55px; 
+}
+#chartdiv4{
+    width: 420px;
+    height:500px;
+    font-size   : 11px;
+    margin-right: 20px;
+	position:absolute; 
+	right:0; 
+}
+
+
+</style>
+
+	
+	<script type="text/javascript">
+       
+$(function() {
+
+
+            var data = {
+                label: "Export Value of Agricultural Products",
+                amount: 3788088,color:'#708090',
+                children: [
+					{ label: 'Y2013', amount:1268217 , color: '#008080',
+                        children: [
+                        { label: 'Natural Rubber', amount: 315159, color: '#FF6347',
+						children: [
+						{ label: 'China', amount: 174665, color: '#008080'},
+						{ label: 'Malaysia 36k', amount: 36016, color: '#008080' },
+						{ label: 'Japan 25.7k', amount: 25787, color: '#008080' },
+						{ label: 'South Korea', amount: 12923, color: '#008080', label: 'South Korea 9.2k'},
+						{ label: 'USA', amount: 12819, color: '#008080', label: 'USA 8.5k'},
+						{ label: 'Others', amount: 52949, color: '#008080'}
+						] },
+                        { label: 'Rice and Products', amount: 149733, color: '#008B8B',
+						children: [	
+						{ label: 'China 8.1k', amount: 8192, color: '#008080'},
+						{ label: 'USA 15.5k', amount: 15503, color: '#008080'},
+						{ label: 'Benin 14.1k', amount: 14182, color: '#008080'},
+						{ label: 'Philippines 1.2k', amount: 1271, color: '#008080'},
+						{ label: 'Nigeria 2.8k', amount: 2843, color: '#008080'},
+						{ label: 'Others', amount: 101828, color: '#008080'}						
+						] },
+						{ label: 'Casssava and Products 117.4k', amount: 117416, color: '#6B8E23',
+						children: [
+						{ label: 'China', amount: 60540, color: '#008080'},
+						{ label: 'South Korea 1.6k', amount: 1603, color: '#008080'},
+						{ label: 'Philippines 1.4k', amount: 1419, color: '#008080'},
+						{ label: 'Japan 8.8k', amount: 8874, color: '#008080'},
+						{ label: 'Indonesia 5.2k', amount: 5216, color: '#008080'},
+						{ label: 'Others', amount: 18040 , color: '#008080'}
+						] },
+						{ label: 'Fruits and Products 80.9k', amount: 80962, color: '#DC143C',
+						children: [
+						{ label: 'USA', amount: 18132, color: '#008080'},
+						{ label: 'China', amount: 14543, color: '#008080'},
+						{ label: 'Vietnam 5.4k', amount: 5414, color: '#008080'},
+						{ label: 'Hongkong 5.5k', amount: 5593, color: '#008080'},
+						{ label: 'Japan 3.6k', amount: 3692, color: '#008080'},
+						{ label: 'Others', amount: 33588 , color: '#008080'}
+						] },
+						{ label: 'Fishes and Product 12.24k', amount: 122481, color: '#90EE90',
+						children: [
+						{ label: 'Others', amount: 61515, color: '#008080'},
+						{ label: 'USA', amount: 19479, color: '#008080'},
+						{ label: 'Japan', amount: 18045, color: '#008080'},
+						{ label: 'Australia 8.7k', amount: 8749, color: '#008080'},
+						{ label: 'Egupt 4.1k', amount: 4100, color: '#008080'},
+						{ label: 'Canada 5.3k', amount: 5359 , color: '#008080'},
+						{ label: 'Libya 5.2k', amount: 5234 , color: '#008080'}
+						] },
+						{ label: 'Other Agricultural Products', amount: 504190, color: '#DAA520'}
+                    ] },
+                    { label: 'Y2014', amount:1308708, color: '#C71585',
+                        children: [
+                        { label: 'Natural Rubber', amount: 244748, color: '#FF6347',
+						children: [
+						{ label: 'China', amount: 134985, color: '#C71585'},
+						{ label: 'Malaysia 26.6k', amount: 26659, color: '#C71585' },
+						{ label: 'Others', amount: 244146, color: '#C71585' },
+						{ label: 'Japan 18.1k', amount: 18172, color: '#C71585'},
+						{ label: 'South Korea 10.8k', amount: 10858, color: '#C71585'},
+						{ label: 'USA 9.9k', amount: 9928, color: '#C71585'}
+						] },
+                        { label: 'Rice and Products', amount: 191224, color: '#008B8B',
+						children: [	
+						{ label: 'Others', amount: 118244, color: '#C71585'},
+						{ label: 'China 13k', amount: 13037, color: '#C71585'},
+						{ label: 'USA 16.1k', amount: 16019, color: '#C71585'},
+						{ label: 'Philippines 5k', amount: 5047, color: '#C71585'},
+						{ label: 'Benin 15.5k', amount: 15575, color: '#C71585'},
+						{ label: 'Nigeria 17k', amount: 17069, color: '#C71585'}						
+						] },
+						{ label: 'Casssava and Products 113.7k', amount: 113719, color: '#6B8E23',
+						children: [
+						{ label: 'China', amount: 75505, color: '#C71585'},
+						{ label: 'South Korea 11.8k', amount: 11854, color: '#C71585'},
+						{ label: 'Philippines 11.1k', amount: 11127, color: '#C71585'},
+						{ label: 'Japan 8.8k', amount: 8880, color: '#C71585'},
+						{ label: 'Others', amount: 19676, color: '#C71585'},
+						{ label: 'Indonesia 6.6k', amount: 6677 , color: '#C71585'}
+						] },
+						{ label: 'Fruits and Products  95.9k', amount: 95901, color: '#DC143C',
+						children: [
+						{ label: 'Others', amount: 58657, color: '#C71585'},
+						{ label: 'USA', amount: 20396, color: '#C71585'},
+						{ label: 'China', amount: 13747, color: '#C71585'},
+						{ label: 'Vietnam 9.7k', amount: 9793, color: '#C71585'},
+						{ label: 'Hongkong 9.2k', amount: 9272, color: '#C71585'},
+						{ label: 'Japan 4.3k', amount: 4333 , color: '#C71585'}
+						] },
+						{ label: 'Fishes and Product 120.6k', amount: 120657, color: '#90EE90',
+						children: [
+						{ label: 'Others', amount: 63820, color: '#C71585'},
+						{ label: 'USA', amount: 18848, color: '#C71585'},
+						{ label: 'Japan', amount: 18368, color: '#C71585'},
+						{ label: 'Australia 8.6k', amount: 8605, color: '#C71585'},
+						{ label: 'Egupt 5.6k', amount: 5681, color: '#C71585'},
+						{ label: 'Canada 5.3k', amount: 5335 , color: '#C71585'}
+						] },
+						{ label: 'Other Agricultural Products', amount: 542459, color: '#DAA520'}
+                    ] },
+                   { label: 'Y2015', amount:1211163 , color: '#483D8B',
+                        children: [
+                        { label: 'Natural Rubber', amount: 193938, color: '#FF6347',
+						children: [
+						{ label: 'China', amount: 103936, color: '#483D8B'},
+						{ label: 'Malaysia 22.4k', amount: 22431, color: '#483D8B' },
+						{ label: 'Others', amount: 36334, color: '#483D8B' },
+						{ label: 'Japan 13k', amount: 13017, color: '#483D8B'},
+						{ label: 'South Korea 9.6k', amount: 9617, color: '#483D8B'},
+						{ label: 'USA 9k', amount: 9053, color: '#483D8B'}
+						] },
+                        { label: 'Rice and Products', amount: 172778, color: '#008B8B',
+						children: [	
+						{ label: 'Others', amount: 76781, color: '#483D8B'},
+						{ label: 'China 17.2k', amount: 17248, color: '#483D8B'},
+						{ label: 'USA 15.5k', amount: 15518, color: '#483D8B'},
+						{ label: 'Philippines 10.5k', amount: 10561, color: '#483D8B'},
+						{ label: 'Benin 10.2k', amount: 10252, color: '#483D8B'},
+						{ label: 'Nigeria 8.3k', amount: 8319, color: '#483D8B'}						
+						] },
+						{ label: 'Casssava and Products 113.7k', amount: 113719, color: '#6B8E23',
+						children: [
+						{ label: 'China', amount: 75505, color: '#483D8B'},
+						{ label: 'South Korea 11.8k', amount: 11854, color: '#483D8B'},
+						{ label: 'Philippines 11.1k', amount: 11127, color: '#483D8B'},
+						{ label: 'Japan 8.8k', amount: 8880, color: '#483D8B'},
+						{ label: 'Others', amount: 105408, color: '#483D8B'},
+						{ label: 'Indonesia 6.6k', amount: 6677 , color: '#483D8B'}
+						] },
+						{ label: 'Fruits and Products 10.6k', amount: 106184, color: '#DC143C',
+						children: [
+						{ label: 'Others', amount: 29078, color: '#483D8B'},
+						{ label: 'USA', amount: 24233, color: '#483D8B'},
+						{ label: 'China', amount: 17549, color: '#483D8B'},
+						{ label: 'Vietnam', amount: 11088, color: '#483D8B'},
+						{ label: 'Hongkong 7.9k', amount: 7974, color: '#483D8B'},
+						{ label: 'Japan 3.7k', amount: 3750 , color: '#483D8B'}
+						] },
+						{ label: 'Fishes and Product 10.9k', amount: 109792, color: '#90EE90',
+						children: [
+						{ label: 'Others', amount: 58657, color: '#483D8B'},
+						{ label: 'USA', amount: 15788, color: '#483D8B'},
+						{ label: 'Japan', amount: 17534, color: '#483D8B'},
+						{ label: 'Australia 7.2k', amount: 7265, color: '#483D8B'},
+						{ label: 'Egupt 6k', amount: 6015, color: '#483D8B'},
+						{ label: 'Canada 4.5k', amount: 4533 , color: '#483D8B'}
+						] },
+						{ label: 'Other Agricultural Products', amount: 512582, color: '#DAA520'}
+						] }
+                    ] 
+              
+                    
+                
+            };
+			
+			            new BubbleTree({
+                data: data,
+                bubbleType: ['icon', 'donut', 'donut'],
+				container: '.bubbletree'
+            });
+
+        });
+
+
+
+    </script>
+	<div class="demo-body demo-background">
+	
+<div class="bubbletree-wrapper">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Unite: Million THB)
+    <div class="bubbletree">
+	</div>
+</div>
+
+<script type="text/javascript" >
+
+function handleLegendClick( graph ) {
+  var chart = graph.chart;
+  for( var i = 0; i < chart.graphs.length; i++ ) {
+    if ( graph.id == chart.graphs[i].id )
+      chart.showGraph(chart.graphs[i]);
+    else
+      chart.hideGraph(chart.graphs[i]);
+  }
+  
+  // return false so that default action is canceled
+  return false;
+}
+
+
+// build bar chart
+var chart = AmCharts.makeChart("chartdiv1", {
+  "type": "serial",
+  "theme": "light",
+
+  "dataProvider": [ {
+    // Y2013
+    "year": "2013",
+    "Export": 1268217,
+    "color": "#008080"
+   
+ }, {
+    // Y2014
+	"year": "2014",
+    "Export": 1308708,
+	"color": "#C71585"
+
+
+  }, {
+    // Y2015
+    "year": "2015",
+    "Export": 1211163,
+	"color": "#483D8B"
+  
+
+  } ],
+  "valueAxes": [{
+    "gridColor": "#FFFFFF",
+    "gridAlpha": 0.2,
+    "dashLength": 0,
+	"minimum":0
+  }],
+  "gridAboveGraphs": true,
+  "startDuration": 1,
+  "rotate": true,
+  "graphs": [{
+    "balloonText": "[[category]]: <b>[[value]]</b>",
+	"fillColorsField": "color",
+    "fillAlphas": 0.5,
+    "alphaField": "alpha",
+    "lineAlpha": 0,
+    "type": "column",
+    "valueField": "Export",
+    "showHandOnHover": true
+  }],
+    "depth3D": 20,
+	"angle": 30,
+    "chartCursor": {
+        "categoryBalloonEnabled": false,
+        "cursorAlpha": 0,
+        "zoomable": false
+    },
+  "categoryField": "year",
+  "categoryAxis": {
+    "gridPosition": "start",
+    "gridAlpha": 0
+  }
+
+});
+
+//build Line chart
+var chart = AmCharts.makeChart("chartdiv3", {
+  "type": "serial",
+  "theme": "light",
+    "legend": {
+    "horizontalGap": 10,
+    "useGraphSettings": true,
+    "markerSize": 10,
+    "clickMarker": handleLegendClick,
+    "clickLabel": handleLegendClick
+  },
+  "dataProvider": [{
+    "year": 2013,
+    "Rubber": 315159,
+    "Rice": 149733,
+	"Casssave": 95692,
+	"Fishes": 122481,
+	"Fruits": 80962
+
+	
+  }, {
+    "year": 2014,
+    "Rubber": 244748,
+    "Rice": 191224,
+	"Casssave": 113719,
+	"Fishes": 120657,
+	"Fruits": 95901
+
+  }, {
+    "year": 2015,
+    "Rubber": 193938,
+    "Rice": 172778,
+	"Casssave": 115889,
+	"Fishes": 109792,
+	"Fruits": 106184
+ 
+  }],
+  "valueAxes": [{
+    "gridColor": "#FFFFFF",
+    "gridAlpha": 0.2,
+    "dashLength": 0,
+	"minimum":0
+  }],
+  "gridAboveGraphs": true,
+  "startDuration": 1,
+  "graphs": [{
+    "title": "Rubber",
+    "balloonText": "[[title]]: <b>[[value]]</b>",
+    "bullet": "round",
+    "bulletSize": 10,
+    "bulletBorderColor": "#ffffff",
+    "bulletBorderAlpha": 1,
+    "bulletBorderThickness": 2,
+    "valueField": "Rubber",
+	"lineColor": "#FF6347"
+  }, {
+    "title": "Rice",
+    "balloonText": "[[title]]: <b>[[value]]</b>",
+    "bullet": "round",
+    "bulletSize": 10,
+    "bulletBorderColor": "#ffffff",
+    "bulletBorderAlpha": 1,
+    "bulletBorderThickness": 2,
+    "valueField": "Rice",
+	"lineColor": "#008B8B"
+	}, {
+    "title": "Casssave",
+    "balloonText": "[[title]]: <b>[[value]]</b>",
+    "bullet": "round",
+    "bulletSize": 10,
+    "bulletBorderColor": "#ffffff",
+    "bulletBorderAlpha": 1,
+    "bulletBorderThickness": 2,
+    "valueField": "Casssave",
+	"lineColor": "#6B8E23"
+	}, {
+    "title": "Fishes",
+    "balloonText": "[[title]]: <b>[[value]]</b>",
+    "bullet": "round",
+    "bulletSize": 10,
+    "bulletBorderColor": "#ffffff",
+    "bulletBorderAlpha": 1,
+    "bulletBorderThickness": 2,
+    "valueField": "Fishes",
+	"lineColor": "#90EE90"
+	}, {
+    "title": "Fruits",
+    "balloonText": "[[title]]: <b>[[value]]</b>",
+    "bullet": "round",
+    "bulletSize": 10,
+    "bulletBorderColor": "#ffffff",
+    "bulletBorderAlpha": 1,
+    "bulletBorderThickness": 2,
+    "valueField": "Fruits",
+	"lineColor": "#DC143C"
+	}],
+  "chartCursor": {
+    "categoryBalloonEnabled": false,
+    "cursorAlpha": 0,
+    "zoomable": false
+  },
+  "categoryField": "year",
+  "categoryAxis": {
+    "gridPosition": "start",
+    "gridAlpha": 0
+  }
+
+});
+
+//set data
+function setDataset(index) {
+  chart.dataProvider = dataSets[Number(index)];
+  chart.valueAxes[1].guides = guidesSets[Number(index)];
+  chart.validateData();
+  
+}
+
+
+// set data
+var dataSets = [
+  // first dataset
+  [{
+//2013
+    // Rubber
+    "x1": 315159,
+    "y1": 25,
+    "v1": 315159,
+
+    // Rice
+    "x2": 149733,
+    "y2": 12,
+    "v2": 149733,
+
+    // Casssave
+    "x3": 95692,
+    "y3": 8,
+    "v3": 95692,
+
+    // Fishes
+    "x4": 122481,
+    "y4": 10,
+    "v4": 122481,
+
+    // Fruits
+    "x5": 80962,
+    "y5": 6,
+    "v5": 80962,
+	
+	  //test
+	"x7": 106184,
+    "y7": 25,
+    "v7": 306184,
+	
+}],
+
+  // second dataset
+  [{
+    // Y2014
+    // Rubber
+    "x1": 244748,
+    "y1": 19,
+    "v1": 244748,
+
+    // Rice
+    "x2": 191224,
+    "y2": 15,
+    "v2": 191224,
+
+    // Casssave
+    "x3": 113719,
+    "y3": 9,
+    "v3": 113719,
+
+    // Fishes
+    "x4": 120657,
+    "y4": 9,
+    "v4": 120657,
+
+    // Fruits
+    "x5": 95901,
+    "y5": 7,
+    "v5": 95901,
+	
+	  //test
+	"x7": 106184,
+    "y7": 25,
+    "v7": 306184
+
+
+ }],
+   // third dataset
+  [{
+    // Y2015
+
+    // Rubber
+    "x1": 193938,
+    "y1": 16,
+    "v1": 193938,
+
+    // Rice
+    "x2": 172778,
+    "y2": 14,
+    "v2": 172778,
+
+    // Casssave
+    "x3": 115889,
+    "y3": 10,
+    "v3": 115889,
+
+    // Fishes
+    "x4": 109792,
+    "y4": 9,
+    "v4": 109792,
+
+    // Fruits
+    "x5": 106184,
+    "y5": 9,
+    "v5": 106184,
+
+    //test
+	"x7": 106184,
+    "y7": 25,
+    "v7": 306184
+
+  } ]
+  ];
+  
+  //set guides
+  var guidesSets = [
+  [ {
+      "value": 0,
+      "toValue": 30,
+      "lineColor": "#e2e2e2",
+      "lineAlpha": 1,
+      "lineThickness": 2,
+      "fillColor": "#00c",
+      "fillAlpha": 0.1,
+      "boldLabel": true,
+	  "label":"2013",
+	  "color": "#008080",
+      "position": "right"
+   
+    }],  [ {
+      "value": 0,
+      "toValue": 30,
+      "lineColor": "#e2e2e2",
+      "lineAlpha": 1,
+      "lineThickness": 2,
+      "fillColor": "#00c",
+      "fillAlpha": 0.1,
+      "boldLabel": true,
+	  "label":"2014",
+	  "color": "#008080",
+      "position": "right"
+   
+    }],  [ {
+      "value": 0,
+      "toValue": 30,
+      "lineColor": "#e2e2e2",
+      "lineAlpha": 1,
+      "lineThickness": 2,
+      "fillColor": "#00c",
+      "fillAlpha": 0.1,
+      "boldLabel": true,
+	  "label":"2015",
+	  "color": "#008080",
+      "position": "right"
+   
+    }]
+	];
+	
+
+	
+	//set graph
+	
+	var setgraph =[ {
+    "balloonText": "[[title]]: <b>[[x]]</b><br>Avg:<b>[[y]]%</b>",
+    "title": "Rubbers",
+    "bullet": "circle",
+    "bulletBorderAlpha": 1,
+    "bulletBorderThickness": 2,
+    "bulletAlpha": 0.8,
+    "lineAlpha": 0,
+    "valueField": "v1",
+    "xField": "x1",
+    "yField": "y1",
+    "minBulletSize": 20,
+    "maxBulletSize": 60,
+    "lineColor": "#FF6347"
+  }, {
+    "balloonText": "[[title]]: <b>[[x]]<br>Avg:<b>[[y]]%</b>",
+    "title": "Rices",
+    "bullet": "circle",
+    "bulletBorderAlpha": 1,
+    "bulletBorderThickness": 2,
+    "bulletAlpha": 0.8,
+    "lineAlpha": 0,
+    "valueField": "v2",
+    "xField": "x2",
+    "yField": "y2",
+    "minBulletSize": 20,
+    "maxBulletSize": 60,
+    "lineColor": "#008B8B"
+  }, {
+    "balloonText": "[[title]]: <b>[[x]]</b><br>Avg:<b>[[y]]%</b>",
+    "title": "Casssaves",
+    "bullet": "circle",
+    "bulletBorderAlpha": 1,
+    "bulletBorderThickness": 2,
+    "bulletAlpha": 0.8,
+    "lineAlpha": 0,
+    "valueField": "v3",
+    "xField": "x3",
+    "yField": "y3",
+    "minBulletSize": 20,
+    "maxBulletSize": 60,
+    "lineColor": "#6B8E23"
+  }, {
+	"balloonText": "[[title]]: <b>[[x]]</b><br>Avg:<b>[[y]]%</b>",
+    "title": "Fruits",
+    "bullet": "circle",
+    "bulletBorderAlpha": 1,
+    "bulletBorderThickness": 2,
+    "bulletAlpha": 0.8,
+    "lineAlpha": 0,
+    "valueField": "v5",
+    "xField": "x5",
+    "yField": "y5",
+    "minBulletSize": 20,
+    "maxBulletSize": 60,
+    "lineColor": "#DC143C"
+ }, {
+	"balloonText": "[[title]]: <b>[[x]]</b><br>Avg:<b>[[y]]%</b>",
+    "title": "Fishes",
+    "bullet": "circle",
+    "bulletBorderAlpha": 1,
+    "bulletBorderThickness": 2,
+    "bulletAlpha": 0.8,
+    "lineAlpha": 0,
+    "valueField": "v4",
+    "xField": "x4",
+    "yField": "y4",
+    "minBulletSize": 20,
+    "maxBulletSize": 60,
+    "lineColor": "#90EE90"
+
+	 },  {
+    "valueField": "v7",
+    "xField": "x7",
+    "yField": "y7",
+    "minBulletSize": 0,
+    "maxBulletSize": 0,
+	"lineColor": "#ffff"
+
+  } ];
+
+//Chart 2014
+var chart = AmCharts.makeChart( "chartdiv4", {
+  "type": "xy",
+  "theme": "light",
+  "marginRight": 70,
+    "balloon": {
+        "adjustBorderColor": false,
+        "shadowAlpha": 0,
+        "fixedPosition":true
+    },
+
+  /**
+   * `bandValueScope` is a custom paramater which will be used by a plugin
+   * to restructure data so that each data point is recalculated into a new 
+   * band
+   */
+  "bandValueScope": 30,
+  "dataProvider": dataSets[0],
+  "valueAxes": [ {
+    "position": "bottom",
+    "axisAlpha": 0,
+	"minimum":50000,
+	"maximum":350000,
+    "titleColor": "#000000",
+    "titleFontSize": 13,
+  }, {
+    "axisAlpha": 0,
+    "position": "left",
+	"unit": "%",
+    "minimum": 0,
+    "minVerticalGap": 30,
+    "titleFontSize": 12,
+    "applyBandValues": true,
+    "guides": guidesSets[0]
+  } ],
+  "startDuration": 1.5,
+  "sequencedAnimation": false,
+  "legend": {
+    "position": "bottom",
+    "markerType": "circle"
+  },
+  "graphs":setgraph
+
+} );
+
+</script>
+<div class="bubblechart-wrapper">
+
+
+<div id="chartdiv1"></div>
+<div id="chartdiv3"></div>
+
+</div>
+<div class="litlechart">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<input class="buttonStyle" id='mybutton' type="button" value="2013" style= "color:white" onclick="setDataset(0);" /> &nbsp;
+<input class="buttonStyle2" id='mybutton' type="button" value="2014" style= "color:white" onclick="setDataset(1);" />&nbsp;
+<input class="buttonStyle3" id='mybutton' type="button" value="2015" style= "color:white" onclick="setDataset(2);" />&nbsp;
+<div id="chartdiv4"></div>
+</div>
+
+</body></html>
