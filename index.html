@@ -123,7 +123,7 @@ $(function() {
                 children: [
 		{ label: 'Y2013', amount:1268217 , color: '#008080',
                         children: [
-                        { label: 'Natural Rubbers', amount: 315159, color: '#FF6347',
+                        { label: 'Natural Rubber', amount: 315159, color: '#FF6347',
 						children: [
 						{ label: 'China', amount: 174665, color: '#008080'},
 						{ label: 'Malaysia 36k', amount: 36016, color: '#008080' },
@@ -132,7 +132,7 @@ $(function() {
 						{ label: 'USA', amount: 12819, color: '#008080', label: 'USA 8.5k'},
 						{ label: 'Others', amount: 52949, color: '#008080'}
 						] },
-                        { label: 'Rices and Products', amount: 149733, color: '#008B8B',
+                        { label: 'Rice and Products', amount: 149733, color: '#008B8B',
 						children: [	
 						{ label: 'China 8.1k', amount: 8192, color: '#008080'},
 						{ label: 'USA 15.5k', amount: 15503, color: '#008080'},
@@ -141,7 +141,7 @@ $(function() {
 						{ label: 'Nigeria 2.8k', amount: 2843, color: '#008080'},
 						{ label: 'Others', amount: 101828, color: '#008080'}						
 						] },
-			{ label: 'Cassaves and Products 117.4k', amount: 117416, color: '#6B8E23',
+			{ label: 'Cassava and Products 117.4k', amount: 117416, color: '#6B8E23',
 						children: [
 						{ label: 'China', amount: 60540, color: '#008080'},
 						{ label: 'South Korea 1.6k', amount: 1603, color: '#008080'},
@@ -173,7 +173,7 @@ $(function() {
                     ] },
                     { label: 'Y2014', amount:1308708, color: '#C71585',
                         children: [
-                        { label: 'Natural Rubbers', amount: 244748, color: '#FF6347',
+                        { label: 'Natural Rubber', amount: 244748, color: '#FF6347',
 						children: [
 						{ label: 'China', amount: 134985, color: '#C71585'},
 						{ label: 'Malaysia 26.6k', amount: 26659, color: '#C71585' },
@@ -182,7 +182,7 @@ $(function() {
 						{ label: 'South Korea 10.8k', amount: 10858, color: '#C71585'},
 						{ label: 'USA 9.9k', amount: 9928, color: '#C71585'}
 						] },
-                        { label: 'Rices and Products', amount: 191224, color: '#008B8B',
+                        { label: 'Rice and Products', amount: 191224, color: '#008B8B',
 						children: [	
 						{ label: 'Others', amount: 118244, color: '#C71585'},
 						{ label: 'China 13k', amount: 13037, color: '#C71585'},
@@ -222,7 +222,7 @@ $(function() {
                     ] },
                    { label: 'Y2015', amount:1211163 , color: '#483D8B',
                         children: [
-                        { label: 'Natural Rubbers', amount: 193938, color: '#FF6347',
+                        { label: 'Natural Rubber', amount: 193938, color: '#FF6347',
 						children: [
 						{ label: 'China', amount: 103936, color: '#483D8B'},
 						{ label: 'Malaysia 22.4k', amount: 22431, color: '#483D8B' },
@@ -231,7 +231,7 @@ $(function() {
 						{ label: 'South Korea 9.6k', amount: 9617, color: '#483D8B'},
 						{ label: 'USA 9k', amount: 9053, color: '#483D8B'}
 						] },
-                        { label: 'Rices and Products', amount: 172778, color: '#008B8B',
+                        { label: 'Rice and Products', amount: 172778, color: '#008B8B',
 						children: [	
 						{ label: 'Others', amount: 76781, color: '#483D8B'},
 						{ label: 'China 17.2k', amount: 17248, color: '#483D8B'},
@@ -240,7 +240,7 @@ $(function() {
 						{ label: 'Benin 10.2k', amount: 10252, color: '#483D8B'},
 						{ label: 'Nigeria 8.3k', amount: 8319, color: '#483D8B'}						
 						] },
-			{ label: 'Cassaves and Products 113.7k', amount: 113719, color: '#6B8E23',
+			{ label: 'Cassava and Products 113.7k', amount: 113719, color: '#6B8E23',
 						children: [
 						{ label: 'China', amount: 75505, color: '#483D8B'},
 						{ label: 'South Korea 11.8k', amount: 11854, color: '#483D8B'},
@@ -416,7 +416,7 @@ var chart = AmCharts.makeChart("chartdiv3", {
   "gridAboveGraphs": true,
   "startDuration": 1,
   "graphs": [{
-    "title": "Rubbers",
+    "title": "Rubber",
     "balloonText": "[[title]]: <b>[[value]]</b>",
     "bullet": "round",
     "bulletSize": 10,
@@ -426,7 +426,7 @@ var chart = AmCharts.makeChart("chartdiv3", {
     "valueField": "Rubber",
 	"lineColor": "#FF6347"
   }, {
-    "title": "Rices",
+    "title": "Rice",
     "balloonText": "[[title]]: <b>[[value]]</b>",
     "bullet": "round",
     "bulletSize": 10,
@@ -436,7 +436,7 @@ var chart = AmCharts.makeChart("chartdiv3", {
     "valueField": "Rice",
 	"lineColor": "#008B8B"
 	}, {
-    "title": "Cassaves",
+    "title": "Cassava",
     "balloonText": "[[title]]: <b>[[value]]</b>",
     "bullet": "round",
     "bulletSize": 10,
@@ -645,7 +645,7 @@ var dataSets = [
 	
 	var setgraph =[ {
     "balloonText": "[[title]]: <b>[[x]]</b><br>Avg:<b>[[y]]%</b>",
-    "title": "Rubbers",
+    "title": "Rubber",
     "bullet": "circle",
     "bulletBorderAlpha": 1,
     "bulletBorderThickness": 2,
@@ -659,7 +659,7 @@ var dataSets = [
     "lineColor": "#FF6347"
   }, {
     "balloonText": "[[title]]: <b>[[x]]<br>Avg:<b>[[y]]%</b>",
-    "title": "Rices",
+    "title": "Rice",
     "bullet": "circle",
     "bulletBorderAlpha": 1,
     "bulletBorderThickness": 2,
@@ -673,7 +673,7 @@ var dataSets = [
     "lineColor": "#008B8B"
   }, {
     "balloonText": "[[title]]: <b>[[x]]</b><br>Avg:<b>[[y]]%</b>",
-    "title": "Cassaves",
+    "title": "Cassava",
     "bullet": "circle",
     "bulletBorderAlpha": 1,
     "bulletBorderThickness": 2,
